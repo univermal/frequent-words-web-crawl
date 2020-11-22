@@ -39,7 +39,7 @@ This is a simple completion service based implementation to track completion fro
 
          new Application(<maxDepth>, <url>, <internalLinksOnly>).getTopNWordsAndWordPairs(<topNCount>);
 
-Here are the results from https://en.wikipedia.org/wiki/Main_Page for depth=4, internalLinksOnly=true and topNCount=10:
+Here are the results from https://en.wikipedia.org/wiki/Main_Page for depth=1, internalLinksOnly=true and topNCount=10:
 
 >[doc-processor-4] DEBUG c.p.fw.process.DocumentProcessor[38] - docs processed - 199
 >[main] INFO  com.purini.fw.Application[99] - top 10 words - [(Retrieved,5357), (November,4574), (Wikipedia,3354), (Edit,2917), (b,2670), (new,2442), (Talk,2369), (COVID-19,2259), (article,2096), (March,2091)]
