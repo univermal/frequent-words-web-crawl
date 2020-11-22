@@ -12,7 +12,7 @@ BFS Vs DFS: I have chosen BFS for the following reasons:
 
 - Although DFS is more memory efficient in this case because as as soon as a document is parsed it can be passed over asynchronously, but memory can still be managed in other ways. Since fetching content is IO bound, that is much more important get parallelized, and which is pretty hard in DFS.
 - BFS allows for immediate levels child documents to be fetched in parallel and that provides better performance time wise.
-- Memory is partly controlled using a fixed thread pool for receiving the documents for text analysis in a LinkedBlockingQueue so that back pressure is maintained. However memory can still blow up if there too much breadth an given level. **An implementation of DFS (UrlTraverserDFS) is put under tests for the same reason if you fall into that scenario and not able to devote more memory, then feel free to use that.**
+- Memory is controlled using a fixed thread pool for receiving the documents for text analysis in a LinkedBlockingQueue so that back pressure is maintained. **An implementation of DFS (UrlTraverserDFS) is also put under tests for experimentation.**
 - Another direct algorithmic benefit of BFS in situation when there can be more than one path to a resource. In that case we would like to give more priority to a shallower child than to a deeper one, especially in frequent word analysis as the shallower ones should be considered more relevant. In DFS this is again hard to achieve.
 
 ### Word Store
